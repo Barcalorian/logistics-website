@@ -8,6 +8,7 @@ export default function Logo() {
                 src="/logo.png"
                 height={60}
                 width={60} 
+                quality={50}
                 alt="Geetanjali transport service logo"
                 priority        
             />
