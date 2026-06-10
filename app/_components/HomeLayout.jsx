@@ -190,6 +190,7 @@ export default function HomeLayout() {
             src="/home-1.jpg"
             alt="Geetanjali Transport Service Background"
             fill
+            sizes="100vw"
             className="object-cover object-center"
             priority
           />
@@ -240,6 +241,7 @@ export default function HomeLayout() {
                 src="/owner-image.png"
                 alt="Owner Image"
                 fill
+                sizes="96px"
                 className="object-cover"
                 priority
               />
@@ -259,6 +261,7 @@ export default function HomeLayout() {
                   src="/logo2.png"
                   alt="Geetanjali Transport Service Logo"
                   fill
+                  sizes="96px"
                   className="object-contain drop-shadow-sm"
                   priority
                 />
@@ -294,6 +297,7 @@ export default function HomeLayout() {
                 src="/packing-loading.jpg" 
                 alt="Expert Packing and Loading" 
                 fill 
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105" 
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -325,6 +329,7 @@ export default function HomeLayout() {
                 src="/transportation-fleet.jpg" 
                 alt="Transportation Fleet" 
                 fill 
+                sizes="(max-width: 768px) 100vw, 25vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105" 
               />
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all"></div>
@@ -357,6 +362,7 @@ export default function HomeLayout() {
                 src="/loading-storage.jpg" 
                 alt="Warehousing and Storage" 
                 fill 
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105" 
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent"></div>
@@ -394,6 +400,7 @@ export default function HomeLayout() {
                     src={service.image} 
                     alt={service.title} 
                     fill 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -540,8 +547,8 @@ export default function HomeLayout() {
                     src={partner.logo} 
                     alt={`${partner.name} Logo`} 
                     fill 
-                    className="object-contain"
                     sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-contain"
                   />
                 </div>
               </div>
