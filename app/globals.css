@@ -1,0 +1,64 @@
+/* Import Tailwind CSS v4 */
+@import "tailwindcss";
+
+/* 1. Link your HeroUI configuration plugin */
+/* @plugin '../hero.js'; */
+
+/* 2. Explicitly point to the heroui node_modules relative to app/globals.css */
+/* @source '../node_modules/@heroui/theme/dist*.{js,ts,jsx,tsx}'; */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+} */
+
+@theme {
+  --color-primary-50: #E1E8EF;
+  --color-primary-100: #D4DEE7;
+  --color-primary-200: #B7C7C7;
+  --color-primary-300: #99B0C7;
+  --color-primary-400: #7C99B6;
+  --color-primary-500: #5E82A6;
+  --color-primary-600: #4C6B8A;
+  --color-primary-700: #3C546C;
+  --color-primary-800: #2C3D4F;
+  --color-primary-900: #1B2631;
+  --color-primary-800: #141C24;
+
+  /*Accent Colors*/
+  --colors-accent-50: #FAF5F0;
+  --colors-accent-100: #F4ECE1;
+  --colors-accent-200: #E8D6BF;
+  --colors-accent-300: #DDC2A2;
+  --colors-accent-400: #D2AF84;
+  --colors-accent-500: #C69963;
+  --colors-accent-600: #B78343;
+  --colors-accent-700: #926835;
+  --colors-accent-800: #6C4D28;
+  --colors-accent-900: #4B351B;
+  --colors-accent-900: #382814;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* html {
+  scroll-behavior: smooth;
+} */

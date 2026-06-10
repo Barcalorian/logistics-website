@@ -1,0 +1,203 @@
+{
+  "reasons": [
+    { "title": "Experienced Team", "desc": "Skilled staff handling logistics operations." },
+    { "title": "Affordable Pricing", "desc": "Quality services at competitive rates." },
+    { "title": "Timely Delivery", "desc": "Punctuality and on-time delivery of goods." },
+    { "title": "Safe Transportation", "desc": "Every item handled carefully to prevent damage." },
+    { "title": "Customer Satisfaction", "desc": "The top priority of our company." },
+    { "title": "Professional Packing", "desc": "Quality materials used for maximum safety." },
+    { "title": "Transparent Services", "desc": "Complete transparency in pricing." },
+    { "title": "Nationwide Network", "desc": "Reliable services across India." }
+  ],
+  "homeServices": [
+    {
+      "id": "packers-movers",
+      "title": "Packers and Movers",
+      "desc": "Professional packers and movers services for households, offices, industries, and commercial establishments.",
+      "image": "/packers-movers.jpg" 
+    },
+    {
+      "id": "transportation",
+      "title": "Transportation Services",
+      "desc": "Full truck load and part load transportation solutions for individuals, businesses, and manufacturers.",
+      "image": "/transportation-service.jpg"
+    },
+    {
+      "id": "car-bike",
+      "title": "Car & Bike Transport",
+      "desc": "Secure vehicle transportation services across India using professional carriers and handling methods.",
+      "image": "/car-bike-service.jpg"
+    },
+    {
+      "id": "warehousing",
+      "title": "Warehousing & Storage",
+      "desc": "Safe and secure temporary or long-term storage facilities for household and commercial goods.",
+      "image": "/warehouse-storage.jpg"
+    },
+    {
+      "id": "loading-unloading",
+      "title": "Loading & Unloading",
+      "desc": "Trained staff for the safe loading and unloading of goods using proper equipment and techniques.",
+      "image": "/loading-unloading.jpg"
+    }
+  ],
+  "ratesData": [
+    {
+      "type": "1BHK",
+      "upto50": "₹3,500 - ₹8,500",
+      "upto500": "₹8,500 - ₹15,000",
+      "upto1000": "₹11,000 - ₹20,000",
+      "upto1500": "₹14,000 - ₹25,000",
+      "upto2500": "₹18,000 - ₹30,000"
+    },
+    {
+      "type": "2BHK",
+      "upto50": "₹5,500 - ₹12,000",
+      "upto500": "₹12,000 - ₹22,000",
+      "upto1000": "₹16,000 - ₹28,000",
+      "upto1500": "₹20,000 - ₹35,000",
+      "upto2500": "₹25,000 - ₹42,000"
+    },
+    {
+      "type": "3BHK",
+      "upto50": "₹7,500 - ₹16,000",
+      "upto500": "₹18,000 - ₹30,000",
+      "upto1000": "₹24,000 - ₹40,000",
+      "upto1500": "₹30,000 - ₹48,000",
+      "upto2500": "₹35,000 - ₹55,000"
+    },
+    {
+      "type": "4BHK / Villa",
+      "upto50": "₹10,500 - ₹22,000",
+      "upto500": "₹25,000 - ₹40,000",
+      "upto1000": "₹32,000 - ₹50,000",
+      "upto1500": "₹40,000 - ₹60,000",
+      "upto2500": "₹48,000 - ₹75,000"
+    },
+    {
+      "type": "Car Transportation",
+      "upto50": "₹1,500 - ₹3,500",
+      "upto500": "₹5,500 - ₹11,000",
+      "upto1000": "₹8,000 - ₹15,000",
+      "upto1500": "₹12,000 - ₹20,000",
+      "upto2500": "₹15,000 - ₹25,000"
+    },
+    {
+      "type": "Bike Transportation",
+      "upto50": "₹800 - ₹1,500",
+      "upto500": "₹2,500 - ₹5,000",
+      "upto1000": "₹4,000 - ₹7,500",
+      "upto1500": "₹6,000 - ₹10,000",
+      "upto2500": "₹8,000 - ₹14,000"
+    }
+  ],
+  "partnersData": [
+    { "name": "State Bank of India", "logo": "/logos/sbi-logo.png" },
+    { "name": "HDFC Bank", "logo": "/logos/hdfc-logo.png" },
+    { "name": "ICICI Bank", "logo": "/logos/icici-logo.png" },
+    { "name": "Tata Motors", "logo": "/logos/tata-logo.png" },
+    { "name": "Reliance Industries", "logo": "/logos/reliance-logo.png" },
+    { "name": "Mahindra Logistics", "logo": "/logos/mahindra-logo.png" },
+    { "name": "Maruti Suzuki", "logo": "/logos/maruti-logo.png" },
+    { "name": "ITC Limited", "logo": "/logos/itc-logo.png" }
+  ],
+  "companyDetails": {
+    "proprietor": "Rajesh Kumar",
+    "phones": ["+91 9716009462", "+91 7838516655"],
+    "phoneLinks": ["+919716009462", "+917838516655"],
+    "emails": ["info@geetanjalitransportservice.in", "geetanjalitransportservices@gmail.com"],
+    "websiteDisplay": "www.geetanjalitransportservice.in",
+    "websiteUrl": "https://www.geetanjalitransportservice.in",
+    "address": "Plot No. 512B, Shop No. 3, Ground Floor, Adarsh Market, Nearby Fire Station Harola, Sector 5, Noida, Uttar Pradesh 201301, India",
+    "gstin": "09APBPK8031K1ZR",
+    "udyam": "UDYAM-UP-28-0033633"
+  },
+  "detailedServices": [
+    {
+      "id": "packers-movers",
+      "title": "Packers and Movers Services",
+      "intro": "Geetanjali Transport Service offers professional packers and movers services for households, offices, industries, and commercial establishments. Every item is packed carefully using quality packing materials to ensure maximum safety during transportation.",
+      "subCategories": [
+        {
+          "name": "Household Shifting",
+          "desc": "Household relocation can be stressful and time-consuming. We simplify the process by offering professional household shifting services. We carefully pack furniture, kitchen items, electronics, fragile items, appliances, clothes, and personal belongings."
+        },
+        {
+          "name": "Office Relocation",
+          "desc": "Office shifting requires proper planning and professional handling to avoid disruptions in business operations. We provide organized office relocation for small offices, corporate offices, and IT companies."
+        },
+        {
+          "name": "Local Shifting Services",
+          "desc": "Fast and affordable local shifting services within Noida, Delhi, Ghaziabad, Gurgaon, Greater Noida, and nearby regions."
+        },
+        {
+          "name": "Domestic Relocation",
+          "desc": "We also offer domestic relocation services across India. Customers can shift their belongings safely from one city to another with complete security and professional support."
+        }
+      ]
+    },
+    {
+      "id": "transportation",
+      "title": "Transportation Services",
+      "intro": "Transportation is one of our core services. We provide transportation solutions for individuals, businesses, industries, retailers, wholesalers, and manufacturers.",
+      "subCategories": [
+        {
+          "name": "Full Truck Load Services",
+          "desc": "We offer full truck load transportation for bulk goods and commercial shipments. Customers can transport heavy goods safely and efficiently."
+        },
+        {
+          "name": "Part Load Services",
+          "desc": "For smaller shipments, we offer part load transportation services at affordable rates."
+        },
+        {
+          "name": "Industrial Goods Transportation",
+          "desc": "Industrial transportation requires professional logistics planning. We provide transportation for industrial machinery, raw materials, tools, and manufactured goods."
+        },
+        {
+          "name": "Commercial Goods Transportation",
+          "desc": "Businesses can rely on us for commercial goods transportation across different cities and states."
+        }
+      ]
+    },
+    {
+      "id": "car-bike",
+      "title": "Car and Bike Transportation",
+      "intro": "We offer secure car and bike transportation services across India. Vehicles are transported safely using professional vehicle carriers and secure handling methods.",
+      "subCategories": [
+        {
+          "name": "Car Transportation",
+          "desc": "Cars are transported using modern car carrier systems designed to protect vehicles during transit."
+        },
+        {
+          "name": "Bike Transportation",
+          "desc": "Motorcycles and scooters are packed and transported carefully to avoid any damage."
+        }
+      ]
+    },
+    {
+      "id": "warehousing",
+      "title": "Warehousing and Storage Services",
+      "intro": "We provide warehousing and storage services for customers who need temporary or long-term storage solutions.",
+      "subCategories": [
+        {
+          "name": "Secure Storage Facilities",
+          "desc": "Our storage facilities are designed to ensure the utmost safety and protection of your goods."
+        },
+        {
+          "name": "Household Storage",
+          "desc": "Customers can store household items safely for a short or long duration."
+        },
+        {
+          "name": "Commercial Storage",
+          "desc": "Businesses can use our warehouse facilities for inventory and commercial goods."
+        }
+      ]
+    },
+    {
+      "id": "loading-unloading",
+      "title": "Loading and Unloading Services",
+      "intro": "Loading and unloading are important parts of transportation and relocation. We provide trained staff for the safe loading and unloading of goods using proper equipment and handling techniques.",
+      "subCategories": []
+    }
+  ]
+}
