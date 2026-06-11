@@ -21,11 +21,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${josefin.className} antialiased min-h-screen bg-primary-950 text-primary-100 flex flex-col relative`}>
+      <body className={`${josefin.className} antialiased min-h-screen bg-primary-950 text-primary-100 flex flex-col relative overflow-x-hidden`}>
         <Header />
-        <div className="flex-1 px-8 py-12 grid">
+        <div className="flex-1 px-4 sm:px-6 lg:px-8 py-8 md:py-12 flex flex-col w-full">
           <StoreProvider>
-          <main className="max-w-7xl mx-auto w-full">{children}</main>
+            <main className="max-w-7xl mx-auto w-full flex-1">{children}</main>
           </StoreProvider>
         </div>
         <Footer />

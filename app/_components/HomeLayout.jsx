@@ -184,7 +184,7 @@ export default function HomeLayout() {
 
       <EnquiryModal />
       
-      <div className="relative w-full h-[80vh] min-h-125 flex items-center text-white overflow-hidden">
+      <div className="relative w-full h-[80vh] min-h-[500px] flex items-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/home-1.jpg"
@@ -441,7 +441,7 @@ export default function HomeLayout() {
           </div>
 
           <div className="overflow-x-auto pb-4">
-            <table className="w-full text-left border-collapse min-w-212.5">
+            <table className="w-full text-left border-collapse min-w-[800px] sm:min-w-[900px]">
               <thead>
                 <tr className="bg-blue-50 text-blue-900">
                   <th className="p-4 font-bold rounded-tl-xl border-b border-blue-100 whitespace-nowrap">Shifting Type</th>
@@ -480,7 +480,7 @@ export default function HomeLayout() {
             { label: "Successful Moves", target: 8500, suffix: "+" }
           ].map((stat, i) => (
             <div key={i} className="animate-counter-card opacity-0 will-change-transform bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
-              <div className="text-3xl md:text-5xl font-extrabold text-blue-600 mb-2 flex justify-center items-center">
+              <div className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-blue-600 mb-2 flex justify-center items-center">
                 <span className="counter-number" data-target={stat.target}>0</span>
                 <span>{stat.suffix}</span>
               </div>

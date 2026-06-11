@@ -3,12 +3,12 @@ import Image from "next/image";
 
 export default function Logo() {
     return(
-        <Link href="/">
+        <Link href="/" className="flex items-center gap-4 z-10">
             <Image 
                 src="/logo2.png"
                 height={60}
                 width={60} 
-                quality={50}
+                quality={100}
                 alt="Geetanjali transport service logo"
                 priority        
             />
