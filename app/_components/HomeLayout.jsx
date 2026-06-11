@@ -184,7 +184,7 @@ export default function HomeLayout() {
 
       <EnquiryModal />
       
-      <div className="relative w-full h-[80vh] min-h-[500px] flex items-center text-white overflow-hidden">
+      <div className="relative w-full h-[80vh] min-h-125 flex items-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/home-1.jpg"
@@ -441,7 +441,7 @@ export default function HomeLayout() {
           </div>
 
           <div className="overflow-x-auto pb-4">
-            <table className="w-full text-left border-collapse min-w-[800px] sm:min-w-[900px]">
+            <table className="w-full text-left border-collapse min-w-20 sm:min-w-225">
               <thead>
                 <tr className="bg-blue-50 text-blue-900">
                   <th className="p-4 font-bold rounded-tl-xl border-b border-blue-100 whitespace-nowrap">Shifting Type</th>
