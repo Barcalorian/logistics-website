@@ -150,7 +150,7 @@ export default function AboutLayout() {
               <div className="w-full h-full overflow-hidden rounded-xl">
                 <img 
                   src="/about-2.png"
-                  className="gsap-image object-cover w-full h-64 lg:h-full min-h-[300px] lg:min-h-[400px]"
+                  className="gsap-image object-cover w-full h-64 lg:h-full min-h-75 lg:min-h-100"
                   alt="Professional Packing and Moving Team"
                 />
               </div>

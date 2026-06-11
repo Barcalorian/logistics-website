@@ -209,7 +209,7 @@ export default function HomeLayout() {
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 overflow-hidden">
 
         <div className="animate-overview-block opacity-0 will-change-transform mb-12 md:mb-16 bg-white p-6 sm:p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 sm:text-4xl text-center mb-6 sm:mb-8">
+          <h2 className="text-2xl font-extrabold text-gray-900 sm:text-4xl text-center mb-6 sm:mb-8">
             Company Overview
           </h2>
           <div className="space-y-4 sm:space-y-6 text-sm sm:text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto text-justify sm:text-left">
