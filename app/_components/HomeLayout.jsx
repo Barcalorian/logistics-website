@@ -257,6 +257,7 @@ export default function HomeLayout() {
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
+        {/* Company Overview Section */}
         <div className="animate-overview-block opacity-0 will-change-transform mb-16 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl text-center mb-8">
             Company Overview
@@ -292,6 +293,7 @@ export default function HomeLayout() {
             </p>
           </div>
 
+          {/* Fully Restored Original Text Content & Layout Block */}
           <div className="animate-intro-right opacity-0 will-change-transform bg-blue-50 p-8 md:p-10 rounded-2xl border border-blue-100 shadow-sm relative overflow-hidden">
             <div className="relative z-10">
               <div className="w-24 h-24 relative mb-6">
@@ -479,7 +481,7 @@ export default function HomeLayout() {
           </div>
 
           <div className="overflow-x-auto pb-4">
-            <table className="w-full text-left border-collapse min-w-200">
+            <table className="w-full text-left border-collapse min-w-212.5">
               <thead>
                 <tr className="bg-blue-50 text-blue-900">
                   <th className="p-4 font-bold rounded-tl-xl border-b border-blue-100 whitespace-nowrap">Shifting Type</th>
@@ -510,6 +512,7 @@ export default function HomeLayout() {
           </div>
         </div>
 
+        {/* Counter Block Section */}
         <div className="counter-grid-container mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
             { label: "Happy Customers", target: 5000, suffix: "+" },
@@ -652,8 +655,10 @@ export default function HomeLayout() {
           </div>
         </div>
 
+        {/* Owner's Message & Core Trust Split Section */}
         <div className="animate-footer-trust-section grid grid-cols-1 lg:grid-cols-12 gap-8 mt-24 border-t border-gray-200 pt-16">
           
+          {/* Column 1: Fancy Message from Owner with Dark Gradient Backdrop & Clean Footer Icons */}
           <div className="animate-owner-message-card opacity-0 will-change-transform lg:col-span-5 bg-linear-to-br from-gray-900 to-blue-950 p-8 rounded-3xl text-white shadow-xl flex flex-col justify-between relative overflow-hidden group">
             <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-500 rounded-full opacity-10 blur-xl pointer-events-none group-hover:scale-150 transition-transform duration-700"></div>
             
