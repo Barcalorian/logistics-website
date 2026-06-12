@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useRef } from "react";
+import Image from "next/image";
+import Link from "next/link"; // Added Link import
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -9,8 +11,9 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function ServicesLayout({ services }) {
+export default function ServicesLayout({ siteData }) {
   const containerRef = useRef(null);
+  const { detailedServices, homeServices } = siteData;
 
   const CheckIcon = () => (
     <svg className="w-5 h-5 mr-2 text-blue-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -19,6 +22,7 @@ export default function ServicesLayout({ services }) {
   );
 
   useGSAP(() => {
+    // --- Existing Header Animations ---
     const headerTl = gsap.timeline();
     headerTl
       .fromTo(".animate-services-title", 
@@ -36,9 +40,11 @@ export default function ServicesLayout({ services }) {
         "-=0.4"
       );
 
+    // --- Existing Service Blocks Animations ---
     const serviceBlocks = gsap.utils.toArray(".animate-service-block");
     serviceBlocks.forEach((block) => {
       const cardNum = block.querySelector(".bg-card-number");
+      const imageBox = block.querySelector(".service-image-box");
       const contentInner = block.querySelector(".service-content-inner");
       const gridItems = block.querySelectorAll(".service-grid-item");
 
@@ -60,8 +66,13 @@ export default function ServicesLayout({ services }) {
           { opacity: 0.5, y: 0, scale: 1, duration: 0.7, ease: "back.out(1.2)" },
           "-=0.5"
         )
+        .fromTo(imageBox,
+          { opacity: 0, x: -20 },
+          { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" },
+          "-=0.4"
+        )
         .fromTo(contentInner,
-          { opacity: 0, x: -25 },
+          { opacity: 0, x: 25 },
           { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" },
           "-=0.4"
         );
@@ -74,11 +85,26 @@ export default function ServicesLayout({ services }) {
         );
       }
     });
+
+    // --- New "Get Enquiry" Button Animation ---
+    // Mimicking the "gsap-card" behavior from AboutLayout
+    gsap.from(".animate-enquiry-btn", {
+      scrollTrigger: {
+        trigger: ".animate-enquiry-btn",
+        start: "top 90%",
+        toggleActions: "play none none reverse",
+      },
+      y: 60,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
+
   }, { scope: containerRef });
 
   return (
     <div ref={containerRef} className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         
         <div className="text-center mb-20">
           <h1 className="animate-services-title opacity-0 will-change-transform text-3xl font-extrabold text-gray-900 sm:text-4xl mb-4">
@@ -90,42 +116,77 @@ export default function ServicesLayout({ services }) {
           </p>
         </div>
 
-        <div className="space-y-24">
-          {services.map((service, index) => (
-            <div 
-              key={service.id} 
-              id={service.id} 
-              className="animate-service-block opacity-0 will-change-transform scroll-mt-24 bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100 relative overflow-hidden"
-            >
-              <div className="bg-card-number absolute -top-6 -right-6 text-9xl font-black text-gray-50 opacity-0 pointer-events-none select-none">
-                0{index + 1}
-              </div>
+        <div className="space-y-20">
+          {detailedServices.map((service, index) => {
+            const matchingHomeService = homeServices.find(hs => hs.id === service.id);
+            const serviceImage = matchingHomeService ? matchingHomeService.image : null;
 
-              <div className="service-content-inner opacity-0 relative z-10 mb-10 md:w-3/4">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  {service.intro}
-                </p>
-              </div>
-
-              {service.subCategories.length > 0 && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10 mt-8 pt-8 border-t border-gray-100">
-                  {service.subCategories.map((sub, subIndex) => (
-                    <div key={subIndex} className="service-grid-item opacity-0 flex flex-col">
-                      <h3 className="text-xl font-semibold text-blue-700 mb-3 flex items-center">
-                        <CheckIcon />
-                        {sub.name}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed pl-7">
-                        {sub.desc}
-                      </p>
-                    </div>
-                  ))}
+            return (
+              <div 
+                key={service.id} 
+                id={service.id} 
+                className="animate-service-block opacity-0 will-change-transform scroll-mt-24 bg-white rounded-2xl shadow-sm p-6 md:p-10 lg:p-12 border border-gray-100 relative overflow-hidden flex flex-col lg:flex-row gap-8 lg:gap-12 items-start"
+              >
+                <div className="bg-card-number absolute -top-6 -right-6 text-9xl font-black text-gray-50 opacity-0 pointer-events-none select-none z-0">
+                  0{index + 1}
                 </div>
-              )}
-            </div>
-          ))}
+
+                <div className="service-image-box opacity-0 w-full lg:w-2/5 shrink-0 relative z-10 rounded-xl overflow-hidden shadow-sm h-64 sm:h-80 lg:h-96 bg-gray-200">
+                  {serviceImage ? (
+                    <Image 
+                      src={serviceImage} 
+                      alt={service.title} 
+                      fill 
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-gray-400">
+                      No Image Available
+                    </div>
+                  )}
+                </div>
+
+                <div className="service-content-inner opacity-0 relative z-10 w-full lg:w-3/5 flex flex-col">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h2>
+                  <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                    {service.intro}
+                  </p>
+
+                  {service.subCategories && service.subCategories.length > 0 && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-gray-100 mt-auto">
+                      {service.subCategories.map((sub, subIndex) => (
+                        <div key={subIndex} className="service-grid-item opacity-0 flex flex-col">
+                          <h3 className="text-lg font-semibold text-blue-700 mb-2 flex items-start">
+                            <CheckIcon />
+                            <span className="mt-0.5">{sub.name}</span>
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed pl-7 text-sm">
+                            {sub.desc}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
         </div>
+
+        {/* --- New "Get Enquiry" Button --- */}
+        <div className="text-center mt-20 overflow-hidden">
+          <Link 
+            href="/contact"
+            className="animate-enquiry-btn inline-flex items-center justify-center bg-blue-600 px-8 py-4 text-white text-lg font-semibold hover:bg-blue-700 transition-colors rounded-lg shadow-sm"
+          >
+            Get Enquiry
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
+        </div>
+
       </div>
     </div>
   );
