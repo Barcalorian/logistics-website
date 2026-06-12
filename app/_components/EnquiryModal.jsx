@@ -100,58 +100,60 @@ export default function EnquiryModal() {
   return (
     <div 
       ref={modalRef} 
-      // Fixed z-index to use an arbitrary value so Tailwind definitely picks it up
-      className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
     >
       <div 
         className="modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 will-change-transform"
         onClick={closeModalAnimation} 
       ></div>
       
-      {/* CRITICAL MOBILE FIX: 
-        max-h-[95vh] and overflow-y-auto allow the user to scroll through the form 
-        if their screen is too short to display it all at once.
+      {/* CRITICAL FIXES HERE:
+        - Reduced max-h to 85vh on mobile so it doesn't get hidden under browser UI.
+        - Reduced border radius slightly on mobile (rounded-2xl) to save edge space.
       */}
-      <div className="modal-box relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl max-h-[95vh] overflow-y-auto opacity-0 will-change-transform z-10 scrollbar-thin [-ms-overflow-style:none] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
+      <div className="modal-box relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto opacity-0 will-change-transform z-10 [scrollbar-width:thin] [-ms-overflow-style:none] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
         
         <button
           onClick={closeModalAnimation}
-          className="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-red-50 hover:text-red-600 transition-colors z-20"
+          className="absolute top-3 right-3 sm:top-5 sm:right-5 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-red-50 hover:text-red-600 transition-colors z-20"
           aria-label="Close modal"
         >
           <X className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
 
-        <div className="p-6 sm:p-8 md:p-10">
-          <div className="modal-item opacity-0 will-change-transform mt-2">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2 text-center">
+        {/* Compressed padding on mobile */}
+        <div className="p-5 sm:p-8 md:p-10">
+          <div className="modal-item opacity-0 will-change-transform mt-1 sm:mt-2">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 mb-1 sm:mb-2 text-center">
               Get your free enquiry
             </h2>
-            <p className="text-gray-500 text-center mb-6 sm:mb-8 text-sm md:text-base">
+            <p className="text-gray-500 text-center mb-5 sm:mb-8 text-xs sm:text-sm md:text-base">
               Fill out the details below and we will get back to you instantly.
             </p>
           </div>
 
-          <form className="flex flex-col gap-5 sm:gap-6" onSubmit={onSubmit}>
-            <div className="modal-item opacity-0 will-change-transform grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 w-full">
-              <div className="flex flex-col gap-1.5 w-full">
-                <label htmlFor="movingFrom" className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                  <MapPin className="w-4 h-4 text-blue-600" />
+          {/* Compressed gaps on mobile (gap-3 instead of gap-5) */}
+          <form className="flex flex-col gap-3 sm:gap-6" onSubmit={onSubmit}>
+            <div className="modal-item opacity-0 will-change-transform grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 w-full">
+              <div className="flex flex-col gap-1 sm:gap-1.5 w-full">
+                <label htmlFor="movingFrom" className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-gray-700">
+                  <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
                   <span>Moving From <span className="text-red-500">*</span></span>
                 </label>
+                {/* Reduced vertical padding on inputs (py-2.5 on mobile) */}
                 <input
                   id="movingFrom"
                   name="movingFrom"
                   type="text"
                   required
                   placeholder="E.g. Noida"
-                  className="w-full rounded-xl bg-gray-100 border-2 border-transparent px-4 py-3 text-sm text-gray-900 transition-colors focus:bg-white focus:border-blue-500 focus:outline-none hover:bg-gray-200"
+                  className="w-full rounded-xl bg-gray-100 border-2 border-transparent px-3 py-2.5 sm:px-4 sm:py-3 text-sm text-gray-900 transition-colors focus:bg-white focus:border-blue-500 focus:outline-none hover:bg-gray-200"
                 />
               </div>
 
-              <div className="flex flex-col gap-1.5 w-full">
-                <label htmlFor="movingTo" className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                  <Navigation className="w-4 h-4 text-blue-600" />
+              <div className="flex flex-col gap-1 sm:gap-1.5 w-full">
+                <label htmlFor="movingTo" className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-gray-700">
+                  <Navigation className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
                   <span>Moving To <span className="text-red-500">*</span></span>
                 </label>
                 <input
@@ -160,15 +162,15 @@ export default function EnquiryModal() {
                   type="text"
                   required
                   placeholder="E.g. Bengaluru"
-                  className="w-full rounded-xl bg-gray-100 border-2 border-transparent px-4 py-3 text-sm text-gray-900 transition-colors focus:bg-white focus:border-blue-500 focus:outline-none hover:bg-gray-200"
+                  className="w-full rounded-xl bg-gray-100 border-2 border-transparent px-3 py-2.5 sm:px-4 sm:py-3 text-sm text-gray-900 transition-colors focus:bg-white focus:border-blue-500 focus:outline-none hover:bg-gray-200"
                 />
               </div>
             </div>
 
-            <div className="modal-item opacity-0 will-change-transform grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 w-full">
-              <div className="flex flex-col gap-1.5 w-full">
-                <label htmlFor="movingType" className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                  <Truck className="w-4 h-4 text-blue-600" />
+            <div className="modal-item opacity-0 will-change-transform grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 w-full">
+              <div className="flex flex-col gap-1 sm:gap-1.5 w-full">
+                <label htmlFor="movingType" className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-gray-700">
+                  <Truck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
                   <span>Moving Type <span className="text-red-500">*</span></span>
                 </label>
                 <select
@@ -176,8 +178,7 @@ export default function EnquiryModal() {
                   name="movingType"
                   required
                   defaultValue=""
-                  // Removed appearance-none so the native dropdown arrow renders properly on mobile
-                  className="w-full rounded-xl bg-gray-100 border-2 border-transparent px-4 py-3 text-sm text-gray-900 transition-colors focus:bg-white focus:border-blue-500 focus:outline-none hover:bg-gray-200 cursor-pointer"
+                  className="w-full rounded-xl bg-gray-100 border-2 border-transparent px-3 py-2.5 sm:px-4 sm:py-3 text-sm text-gray-900 transition-colors focus:bg-white focus:border-blue-500 focus:outline-none hover:bg-gray-200 cursor-pointer"
                 >
                   <option value="" disabled>Select Moving Type</option>
                   <option value="Within city">Within city</option>
@@ -187,9 +188,9 @@ export default function EnquiryModal() {
                 </select>
               </div>
 
-              <div className="flex flex-col gap-1.5 w-full">
-                <label htmlFor="selectService" className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                  <Package className="w-4 h-4 text-blue-600" />
+              <div className="flex flex-col gap-1 sm:gap-1.5 w-full">
+                <label htmlFor="selectService" className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-gray-700">
+                  <Package className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
                   <span>Select Service <span className="text-red-500">*</span></span>
                 </label>
                 <select
@@ -197,8 +198,7 @@ export default function EnquiryModal() {
                   name="selectService"
                   required
                   defaultValue=""
-                  // Removed appearance-none
-                  className="w-full rounded-xl bg-gray-100 border-2 border-transparent px-4 py-3 text-sm text-gray-900 transition-colors focus:bg-white focus:border-blue-500 focus:outline-none hover:bg-gray-200 cursor-pointer"
+                  className="w-full rounded-xl bg-gray-100 border-2 border-transparent px-3 py-2.5 sm:px-4 sm:py-3 text-sm text-gray-900 transition-colors focus:bg-white focus:border-blue-500 focus:outline-none hover:bg-gray-200 cursor-pointer"
                 >
                   <option value="" disabled>Select Service</option>
                   <option value="Household shifting">Household shifting</option>
@@ -217,10 +217,10 @@ export default function EnquiryModal() {
               </div>
             </div>
 
-            <div className="modal-item opacity-0 will-change-transform grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 w-full">
-              <div className="flex flex-col gap-1.5 w-full">
-                <label htmlFor="phone" className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                  <Phone className="w-4 h-4 text-blue-600" />
+            <div className="modal-item opacity-0 will-change-transform grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 w-full">
+              <div className="flex flex-col gap-1 sm:gap-1.5 w-full">
+                <label htmlFor="phone" className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-gray-700">
+                  <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
                   <span>Phone Number <span className="text-red-500">*</span></span>
                 </label>
                 <input
@@ -230,13 +230,13 @@ export default function EnquiryModal() {
                   required
                   minLength={10}
                   placeholder="+91 98765 43210"
-                  className="w-full rounded-xl bg-gray-100 border-2 border-transparent px-4 py-3 text-sm text-gray-900 transition-colors focus:bg-white focus:border-blue-500 focus:outline-none hover:bg-gray-200"
+                  className="w-full rounded-xl bg-gray-100 border-2 border-transparent px-3 py-2.5 sm:px-4 sm:py-3 text-sm text-gray-900 transition-colors focus:bg-white focus:border-blue-500 focus:outline-none hover:bg-gray-200"
                 />
               </div>
 
-              <div className="flex flex-col gap-1.5 w-full">
-                <label htmlFor="movingTime" className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                  <CalendarClock className="w-4 h-4 text-blue-600" />
+              <div className="flex flex-col gap-1 sm:gap-1.5 w-full">
+                <label htmlFor="movingTime" className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-gray-700">
+                  <CalendarClock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
                   <span>Moving Time <span className="text-red-500">*</span></span>
                 </label>
                 <select
@@ -244,8 +244,7 @@ export default function EnquiryModal() {
                   name="movingTime"
                   required
                   defaultValue=""
-                  // Removed appearance-none
-                  className="w-full rounded-xl bg-gray-100 border-2 border-transparent px-4 py-3 text-sm text-gray-900 transition-colors focus:bg-white focus:border-blue-500 focus:outline-none hover:bg-gray-200 cursor-pointer"
+                  className="w-full rounded-xl bg-gray-100 border-2 border-transparent px-3 py-2.5 sm:px-4 sm:py-3 text-sm text-gray-900 transition-colors focus:bg-white focus:border-blue-500 focus:outline-none hover:bg-gray-200 cursor-pointer"
                 >
                   <option value="" disabled>Select Timeline</option>
                   <option value="Urgently">Urgently</option>
@@ -257,12 +256,12 @@ export default function EnquiryModal() {
               </div>
             </div>
 
-            <div className="modal-item opacity-0 will-change-transform mt-2 sm:mt-4">
+            <div className="modal-item opacity-0 will-change-transform mt-1 sm:mt-3">
               <button 
                 type="submit" 
-                className="w-full bg-blue-600 text-white hover:bg-blue-700 px-6 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center gap-2 transition-colors shadow-lg active:scale-[0.98]"
+                className="w-full bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-lg flex items-center justify-center gap-2 transition-colors shadow-lg active:scale-[0.98]"
               >
-                <Check className="w-5 h-5 sm:w-6 sm:h-6" />
+                <Check className="w-4 h-4 sm:w-6 sm:h-6" />
                 Submit Enquiry
               </button>
             </div>
