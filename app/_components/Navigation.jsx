@@ -11,7 +11,8 @@ import {
 
 export default function Navigation() {
   return (
-    <nav className="z-10 font-semibold w-full">
+    // ADDED: text-gray-900 to ensure links are clearly visible on the white background
+    <nav className="z-10 font-semibold w-full text-gray-900">
       <ul className="flex items-center justify-start lg:justify-center gap-6 md:gap-8 lg:gap-10 w-max mx-auto lg:mx-0 px-2 lg:px-0 text-sm md:text-base">
         <li>
           <Link
