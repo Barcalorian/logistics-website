@@ -471,7 +471,6 @@ export default function HomeLayout() {
           </div>
         </div>
 
-        {/* Dynamic Matrix Rates Table */}
         <div className="animate-rates-section opacity-0 will-change-transform mb-20 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
           <div className="text-center mb-10">
              <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2 block">
@@ -624,11 +623,11 @@ export default function HomeLayout() {
               </p>
             </div>
 
-            {/* Bento Card 2: Identity Branding Image Showcase 1 */}
             <div className="animate-identity-bento-item opacity-0 will-change-transform md:col-span-1 md:row-span-2 relative rounded-3xl overflow-hidden bg-gray-200 shadow-sm group">
-              <Image 
-                src="/about-fleet.jpg" 
+              <Image
+                src="/transit-infrastructure.jpg" 
                 alt="Geetanjali Operational Transit Infrastructure" 
+                quality={60}
                 fill 
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -643,7 +642,7 @@ export default function HomeLayout() {
             {/* Bento Card 3: Identity Branding Image Showcase 2 */}
             <div className="animate-identity-bento-item opacity-0 will-change-transform md:col-span-1 md:row-span-1 relative rounded-3xl overflow-hidden bg-gray-200 shadow-sm group">
               <Image 
-                src="/about-team.jpg" 
+                src="/coordination-management.jpg" 
                 alt="Professional Logistics Coordination Management" 
                 fill 
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -725,7 +724,6 @@ export default function HomeLayout() {
             </div>
           </div>
 
-          {/* Column 2: Trust Narrative + Call To Action */}
           <div className="animate-trust-pitch-card opacity-0 will-change-transform lg:col-span-7 bg-white p-8 md:p-10 rounded-3xl border border-gray-100 shadow-sm flex flex-col justify-center items-start">
             <span className="text-blue-600 font-bold uppercase tracking-widest text-xs mb-2">Uncompromising Integrity</span>
             <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight mb-5 leading-tight">
