@@ -180,7 +180,6 @@ export default function HomeLayout() {
         "-=0.4"
       );
 
-    // Identity Bento Box Timeline Registration
     const identityBentoTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".identity-bento-container",
@@ -220,7 +219,6 @@ export default function HomeLayout() {
 
       <EnquiryModal />
       
-      {/* Hero Section */}
       <div className="relative w-full h-[80vh] min-h-125 flex items-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
@@ -274,7 +272,6 @@ export default function HomeLayout() {
           </div>
         </div>
         
-        {/* Leadership & Restored Original 2017 Banner Section */}
         <div className="animate-intro-section grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-start">
           
           <div className="animate-intro-left opacity-0 will-change-transform pt-8 md:pt-10">
@@ -328,7 +325,6 @@ export default function HomeLayout() {
           </div>
         </div>
 
-        {/* Bento Grid Gallery Section */}
         <div className="mb-20">
           <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-10">
             Our Work & Strategic Reach
@@ -419,7 +415,6 @@ export default function HomeLayout() {
           </div>
         </div>
 
-        {/* Services Grid Section */}
         <div className="mb-20">
           <div className="text-center mb-14">
             <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2 block">
@@ -535,7 +530,6 @@ export default function HomeLayout() {
           ))}
         </div>
 
-        {/* Government Credentials Banner */}
         <div className="animate-cert-banner opacity-0 will-change-transform mt-16 bg-blue-50 border border-blue-100 rounded-2xl p-8 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-4">
@@ -568,7 +562,6 @@ export default function HomeLayout() {
           </div>
         </div>
 
-        {/* Corporate Client Grid */}
         <div className="partners-section-container mt-24 mb-16">
           <div className="animate-partners-header opacity-0 will-change-transform text-center mb-12">
             <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2 block">
@@ -604,7 +597,6 @@ export default function HomeLayout() {
           </div>
         </div>
 
-        {/* Bento Style "Who We Are" Identity Block */}
         <div className="identity-bento-container mt-24 mb-16 border-t border-gray-200 pt-16">
           <div className="text-center mb-12">
             <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2 block">Our Identity</span>
@@ -613,7 +605,6 @@ export default function HomeLayout() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[240px]">
-            {/* Bento Card 1: Core Value Proposition Text Statement */}
             <div className="animate-identity-bento-item opacity-0 will-change-transform md:col-span-2 md:row-span-1 bg-white border border-gray-100 rounded-3xl p-8 shadow-sm flex flex-col justify-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-3 flex items-center gap-2">
                 <span>🚀</span> Certified Logistics Pioneers
@@ -627,7 +618,6 @@ export default function HomeLayout() {
               <Image
                 src="/transit-infrastructure.jpg" 
                 alt="Geetanjali Operational Transit Infrastructure" 
-                quality={60}
                 fill 
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -639,7 +629,6 @@ export default function HomeLayout() {
               </div>
             </div>
 
-            {/* Bento Card 3: Identity Branding Image Showcase 2 */}
             <div className="animate-identity-bento-item opacity-0 will-change-transform md:col-span-1 md:row-span-1 relative rounded-3xl overflow-hidden bg-gray-200 shadow-sm group">
               <Image 
                 src="/coordination-management.jpg" 
@@ -654,7 +643,6 @@ export default function HomeLayout() {
               </div>
             </div>
 
-            {/* Bento Card 4: Strategic Priorities Quick-Look */}
             <div className="animate-identity-bento-item opacity-0 will-change-transform md:col-span-1 md:row-span-1 bg-linear-to-br from-blue-600 to-blue-700 text-white rounded-3xl p-6 shadow-md flex flex-col justify-center">
               <h4 className="text-lg font-bold mb-3 uppercase tracking-wider text-blue-100">Strategic Vectors</h4>
               <ul className="space-y-2 text-sm font-medium">
