@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link"; // Added Link import
+import Link from "next/link"; 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -22,7 +22,6 @@ export default function ServicesLayout({ siteData }) {
   );
 
   useGSAP(() => {
-    // --- Existing Header Animations ---
     const headerTl = gsap.timeline();
     headerTl
       .fromTo(".animate-services-title", 
@@ -40,7 +39,6 @@ export default function ServicesLayout({ siteData }) {
         "-=0.4"
       );
 
-    // --- Existing Service Blocks Animations ---
     const serviceBlocks = gsap.utils.toArray(".animate-service-block");
     serviceBlocks.forEach((block) => {
       const cardNum = block.querySelector(".bg-card-number");
@@ -86,8 +84,6 @@ export default function ServicesLayout({ siteData }) {
       }
     });
 
-    // --- New "Get Enquiry" Button Animation ---
-    // Mimicking the "gsap-card" behavior from AboutLayout
     gsap.from(".animate-enquiry-btn", {
       scrollTrigger: {
         trigger: ".animate-enquiry-btn",
@@ -103,20 +99,20 @@ export default function ServicesLayout({ siteData }) {
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
-      <div className="max-w-7xl mx-auto">
+    <div ref={containerRef} className="w-full min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto w-full">
         
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 w-full">
           <h1 className="animate-services-title opacity-0 will-change-transform text-3xl font-extrabold text-gray-900 sm:text-4xl mb-4">
             Our Comprehensive Services
           </h1>
           <div className="animate-services-bar w-0 h-1 bg-blue-600 mx-auto rounded-full"></div>
-          <p className="animate-services-subtitle opacity-0 will-change-transform mt-6 max-w-3xl mx-auto text-xl text-gray-600">
+          <p className="animate-services-subtitle opacity-0 will-change-transform mt-6 max-w-3xl mx-auto text-base sm:text-xl text-gray-600">
             From household shifting to industrial transportation, Geetanjali Transport Service offers a complete range of professional logistics solutions.
           </p>
         </div>
 
-        <div className="space-y-20">
+        <div className="space-y-12 sm:space-y-20 w-full">
           {detailedServices.map((service, index) => {
             const matchingHomeService = homeServices.find(hs => hs.id === service.id);
             const serviceImage = matchingHomeService ? matchingHomeService.image : null;
@@ -125,13 +121,13 @@ export default function ServicesLayout({ siteData }) {
               <div 
                 key={service.id} 
                 id={service.id} 
-                className="animate-service-block opacity-0 will-change-transform scroll-mt-24 bg-white rounded-2xl shadow-sm p-6 md:p-10 lg:p-12 border border-gray-100 relative overflow-hidden flex flex-col lg:flex-row gap-8 lg:gap-12 items-start"
+                className="animate-service-block opacity-0 will-change-transform scroll-mt-24 bg-white rounded-2xl shadow-sm p-6 md:p-10 lg:p-12 border border-gray-100 relative overflow-hidden flex flex-col lg:flex-row gap-8 lg:gap-12 items-start w-full"
               >
-                <div className="bg-card-number absolute -top-6 -right-6 text-9xl font-black text-gray-50 opacity-0 pointer-events-none select-none z-0">
+                <div className="bg-card-number absolute -top-6 -right-6 text-8xl md:text-9xl font-black text-gray-50 opacity-0 pointer-events-none select-none z-0">
                   0{index + 1}
                 </div>
 
-                <div className="service-image-box opacity-0 w-full lg:w-2/5 shrink-0 relative z-10 rounded-xl overflow-hidden shadow-sm h-64 sm:h-80 lg:h-96 bg-gray-200">
+                <div className="service-image-box opacity-0 w-full lg:w-2/5 shrink-0 relative z-10 rounded-xl overflow-hidden shadow-sm h-56 sm:h-80 lg:h-96 bg-gray-200">
                   {serviceImage ? (
                     <Image 
                       src={serviceImage} 
@@ -148,16 +144,16 @@ export default function ServicesLayout({ siteData }) {
                 </div>
 
                 <div className="service-content-inner opacity-0 relative z-10 w-full lg:w-3/5 flex flex-col">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h2>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{service.title}</h2>
+                  <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8">
                     {service.intro}
                   </p>
 
                   {service.subCategories && service.subCategories.length > 0 && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-gray-100 mt-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-gray-100 mt-auto w-full">
                       {service.subCategories.map((sub, subIndex) => (
-                        <div key={subIndex} className="service-grid-item opacity-0 flex flex-col">
-                          <h3 className="text-lg font-semibold text-blue-700 mb-2 flex items-start">
+                        <div key={subIndex} className="service-grid-item opacity-0 flex flex-col w-full">
+                          <h3 className="text-base md:text-lg font-semibold text-blue-700 mb-2 flex items-start">
                             <CheckIcon />
                             <span className="mt-0.5">{sub.name}</span>
                           </h3>
@@ -174,11 +170,10 @@ export default function ServicesLayout({ siteData }) {
           })}
         </div>
 
-        {/* --- New "Get Enquiry" Button --- */}
-        <div className="text-center mt-20 overflow-hidden">
+        <div className="text-center mt-20 overflow-hidden w-full">
           <Link 
             href="/contact"
-            className="animate-enquiry-btn inline-flex items-center justify-center bg-blue-600 px-8 py-4 text-white text-lg font-semibold hover:bg-blue-700 transition-colors rounded-lg shadow-sm"
+            className="animate-enquiry-btn inline-flex items-center justify-center bg-blue-600 px-6 sm:px-8 py-3 sm:py-4 text-white text-base sm:text-lg font-semibold hover:bg-blue-700 transition-colors rounded-lg shadow-sm w-full sm:w-auto"
           >
             Get Enquiry
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -35,12 +35,12 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-white border-t border-gray-200 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="w-full bg-white border-t border-gray-200 pt-16 pb-8 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 w-full">
           
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full w-full">
             <div className="space-y-6 mb-6">
               <div className="inline-block p-2 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm">
                 <img 
@@ -57,7 +57,7 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="flex flex-wrap pt-2 mt-auto">
+            <div className="flex flex-wrap pt-2 mt-auto gap-2">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all" aria-label="Facebook">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
@@ -104,7 +104,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full w-full">
             <div>
               <h4 className="text-gray-900 text-lg font-bold mb-6">
                 Quick Links
@@ -160,7 +160,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full w-full">
             <div>
               <h4 className="text-gray-900 text-lg font-bold mb-6">
                 Our Services
@@ -222,37 +222,37 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="w-full overflow-hidden">
             <h4 className="text-gray-900 text-lg font-bold mb-6">
               Contact Us
             </h4>
-            <ul className="space-y-5 text-sm">
-              <li className="flex items-start">
+            <ul className="space-y-5 text-sm w-full">
+              <li className="flex items-start w-full">
                 <LocationIcon />
-                <span className="text-gray-600 leading-relaxed">
+                <span className="text-gray-600 leading-relaxed wrap-break-words">
                   Plot No. 512B, Shop No. 3, Ground Floor, Adarsh Market, Nearby Fire Station Harola, Sector 5, Noida, UP 201301
                 </span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start w-full">
                 <PhoneIcon />
-                <span className="text-gray-600 leading-relaxed">
+                <span className="text-gray-600 leading-relaxed wrap-break-words">
                   +91 9716009462 <br/> +91 7838516655
                 </span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start w-full">
                 <EmailIcon />
-                <div className="flex flex-col space-y-2">
-                  <a href="mailto:info@geetanjalitransportservice.in" className="text-gray-600 hover:text-blue-600 transition-colors break-all">
+                <div className="flex flex-col space-y-2 w-full">
+                  <a href="mailto:info@geetanjalitransportservice.in" className="text-gray-600 hover:text-blue-600 transition-colors wrap-break-words">
                     Info@geetanjalitransportservice.in
                   </a>
-                  <a href="mailto:geetanjalitransportservices@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors break-all">
+                  <a href="mailto:geetanjalitransportservices@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors wrap-break-words">
                     Geetanjalitransportservices@gmail.com
                   </a>
                 </div>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start w-full">
                 <GlobeIcon />
-                <a href="https://www.geetanjalitransportservice.in" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors break-all">
+                <a href="https://www.geetanjalitransportservice.in" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors wrap-break-words">
                   www.geetanjalitransportservice.in
                 </a>
               </li>
@@ -261,17 +261,17 @@ export default function Footer() {
 
         </div>
 
-        <div className="pt-8 border-t border-gray-100 flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-gray-500">
+        <div className="pt-8 border-t border-gray-100 flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-gray-500 w-full">
           
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left w-full lg:w-auto">
             © {currentYear} Geetanjali Transport Service. All rights reserved.
           </div>
 
-          <div className="text-center">
+          <div className="text-center w-full lg:w-auto">
             Design & Developed by <a href="https://webworldhub.in" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 hover:underline font-medium transition-colors">webworldhub.in</a>
           </div>
 
-          <div className="flex flex-row justify-center lg:justify-end gap-3 md:gap-4 text-center lg:text-right whitespace-nowrap overflow-x-auto pb-2 lg:pb-0 w-full lg:w-auto">
+          <div className="flex flex-row justify-center lg:justify-end gap-3 md:gap-4 text-center lg:text-right whitespace-nowrap overflow-x-auto scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden w-full lg:w-auto">
             <Link href="/work-process" className="hover:text-blue-600 transition-colors font-medium">
               Work Process
             </Link>

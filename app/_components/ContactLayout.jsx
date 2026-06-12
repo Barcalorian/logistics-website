@@ -13,8 +13,6 @@ if (typeof window !== "undefined") {
 
 export default function ContactLayout() {
   const containerRef = useRef(null);
-
-
   const companyDetails = useMyStore((state) => state.companyDetails);
 
   const LocationIcon = () => (
@@ -78,7 +76,6 @@ export default function ContactLayout() {
         scrollTrigger: {
           trigger: block,
           start: "top 85%",
-          // "play none none reset" ensures it restarts when scrolling back to top
           toggleActions: "play none none reset"
         }
       });
@@ -135,54 +132,53 @@ export default function ContactLayout() {
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
-      <div className="max-w-6xl mx-auto">
+    <div ref={containerRef} className="w-full min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+      <div className="max-w-6xl mx-auto w-full">
         
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 w-full">
           <h1 className="animate-contact-title opacity-0 will-change-transform text-3xl font-extrabold text-gray-900 sm:text-4xl mb-4">
             Get in Touch
           </h1>
           <div className="animate-contact-bar w-0 h-1 bg-blue-600 mx-auto rounded-full"></div>
-          <p className="animate-contact-subtitle opacity-0 will-change-transform mt-6 max-w-3xl mx-auto text-xl text-gray-600">
+          <p className="animate-contact-subtitle opacity-0 will-change-transform mt-6 max-w-3xl mx-auto text-base sm:text-xl text-gray-600">
             Let's make your move stress-free. Whether you are shifting your home, relocating your office, or need industrial transport, Geetanjali Transport Service is here to provide safe and reliable solutions across India.
           </p>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-16 w-full">
           
-          <div className="animate-contact-block opacity-0 will-change-transform bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100 relative overflow-hidden">
-            <div className="bg-card-number absolute -top-6 -right-6 text-9xl font-black text-gray-50 opacity-0 pointer-events-none select-none">
+          <div className="animate-contact-block opacity-0 will-change-transform bg-white rounded-2xl shadow-sm p-6 sm:p-8 md:p-12 border border-gray-100 relative overflow-hidden w-full">
+            <div className="bg-card-number absolute -top-6 -right-6 text-8xl md:text-9xl font-black text-gray-50 opacity-0 pointer-events-none select-none">
               01
             </div>
 
-            <div className="card-header-inner opacity-0 relative z-10 mb-10 md:w-3/4">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Information</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+            <div className="card-header-inner opacity-0 relative z-10 mb-10 w-full lg:w-3/4">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Contact Information</h2>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 Your trusted partner for household shifting, office relocation, and commercial logistics. Reach out to us directly or view our official credentials below.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10 mt-8 pt-8 border-t border-gray-100">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10 mt-8 pt-8 border-t border-gray-100 w-full">
               
-
-              <div className="space-y-8">
-                <div className="contact-list-item opacity-0 flex items-start">
+              <div className="space-y-8 w-full">
+                <div className="contact-list-item opacity-0 flex items-start w-full">
                   <LocationIcon />
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Office Address</h3>
-                    <p className="text-gray-600 leading-relaxed">
+                  <div className="w-full">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">Office Address</h3>
+                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                       {companyDetails.address}
                     </p>
                   </div>
                 </div>
 
-                <div className="contact-list-item opacity-0 flex items-start">
+                <div className="contact-list-item opacity-0 flex items-start w-full">
                   <PhoneIcon />
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Contact Numbers</h3>
+                  <div className="w-full">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">Contact Numbers</h3>
                     {companyDetails.phones.map((phone, idx) => (
-                      <p key={idx} className="text-gray-600 leading-relaxed">
-                        <a href={`tel:${companyDetails.phoneLinks[idx]}`} className="hover:text-blue-600 transition-colors font-medium">
+                      <p key={idx} className="text-gray-600 leading-relaxed text-sm md:text-base">
+                        <a href={`tel:${companyDetails.phoneLinks[idx]}`} className="hover:text-blue-600 transition-colors font-medium wrap-break-words">
                           {phone}
                         </a>
                       </p>
@@ -190,13 +186,13 @@ export default function ContactLayout() {
                   </div>
                 </div>
 
-                <div className="contact-list-item opacity-0 flex items-start">
+                <div className="contact-list-item opacity-0 flex items-start w-full">
                   <EmailIcon />
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Email Address</h3>
+                  <div className="w-full">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">Email Address</h3>
                     {companyDetails.emails.map((email, idx) => (
-                      <p key={idx} className="text-gray-600 leading-relaxed">
-                        <a href={`mailto:${email}`} className="hover:text-blue-600 transition-colors font-medium">
+                      <p key={idx} className="text-gray-600 leading-relaxed text-sm md:text-base">
+                        <a href={`mailto:${email}`} className="hover:text-blue-600 transition-colors font-medium break-all">
                           {email}
                         </a>
                       </p>
@@ -204,12 +200,12 @@ export default function ContactLayout() {
                   </div>
                 </div>
 
-                <div className="contact-list-item opacity-0 flex items-start">
+                <div className="contact-list-item opacity-0 flex items-start w-full">
                   <WebsiteIcon />
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Website</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      <a href={companyDetails.websiteUrl} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors font-medium">
+                  <div className="w-full">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">Website</h3>
+                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                      <a href={companyDetails.websiteUrl} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors font-medium break-all">
                         {companyDetails.websiteDisplay}
                       </a>
                     </p>
@@ -217,26 +213,23 @@ export default function ContactLayout() {
                 </div>
               </div>
 
-              <div className="card-media-inner opacity-0 flex flex-col justify-between h-full">
-                <div className="flex items-start mb-8">
+              <div className="card-media-inner opacity-0 flex flex-col justify-between h-full w-full">
+                <div className="flex items-start mb-8 w-full">
                   <ShieldIcon />
                   <div className="w-full">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Company Details</h3>
-                    <div className="grid grid-cols-2 gap-y-4 gap-x-2">
-                      <div>
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">Company Details</h3>
+                    <div className="grid grid-cols-2 gap-y-4 gap-x-2 w-full">
+                      <div className="w-full">
                         <p className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-1">Proprietor</p>
-
-                        <p className="font-medium text-gray-700">{companyDetails.proprietor}</p>
+                        <p className="font-medium text-gray-700 text-sm md:text-base truncate">{companyDetails.proprietor}</p>
                       </div>
-                      <div>
+                      <div className="w-full">
                         <p className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-1">GSTIN</p>
-                        
-                        <p className="font-medium text-gray-700">{companyDetails.gstin}</p>
+                        <p className="font-medium text-gray-700 text-sm md:text-base truncate">{companyDetails.gstin}</p>
                       </div>
-                      <div className="col-span-2">
+                      <div className="col-span-2 w-full">
                         <p className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-1">UDYAM Reg.</p>
-                        
-                        <p className="font-medium text-gray-700">{companyDetails.udyam}</p>
+                        <p className="font-medium text-gray-700 text-sm md:text-base truncate">{companyDetails.udyam}</p>
                       </div>
                     </div>
                   </div>
@@ -252,28 +245,28 @@ export default function ContactLayout() {
             </div>
           </div>
 
-          <div className="animate-contact-block opacity-0 will-change-transform bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100 relative overflow-hidden">
-            <div className="bg-card-number absolute -top-6 -right-6 text-9xl font-black text-gray-50 opacity-0 pointer-events-none select-none">
+          <div className="animate-contact-block opacity-0 will-change-transform bg-white rounded-2xl shadow-sm p-6 sm:p-8 md:p-12 border border-gray-100 relative overflow-hidden w-full">
+            <div className="bg-card-number absolute -top-6 -right-6 text-8xl md:text-9xl font-black text-gray-50 opacity-0 pointer-events-none select-none">
               02
             </div>
 
-            <div className="card-header-inner opacity-0 relative z-10 mb-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Request a Free Quote</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+            <div className="card-header-inner opacity-0 relative z-10 mb-10 w-full">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Request a Free Quote</h2>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 Fill out the form below with your requirements, and our team will get back to you promptly with a customized solution.
               </p>
             </div>
 
-            <div className="relative z-10 mt-8 pt-8 border-t border-gray-100">
-              <div className="contact-form-inner opacity-0">
+            <div className="relative z-10 mt-8 pt-8 border-t border-gray-100 w-full">
+              <div className="contact-form-inner opacity-0 w-full">
                 <ContactForm />
               </div>
 
-              <div className="contact-map-inner opacity-0 mt-10 border-t border-gray-100 pt-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <div className="contact-map-inner opacity-0 mt-10 border-t border-gray-100 pt-8 w-full">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
                   Visit Our Office
                 </h3>
-                <div className="overflow-hidden rounded-2xl shadow-sm border border-gray-200">
+                <div className="overflow-hidden rounded-2xl shadow-sm border border-gray-200 w-full">
                   <iframe
                     src="https://maps.google.com/maps?q=Geetanjali%20Transport%20Service%20Noida&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"

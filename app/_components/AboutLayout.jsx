@@ -91,8 +91,8 @@ export default function AboutLayout() {
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <div ref={containerRef} className="w-full min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+      <div className="max-w-6xl mx-auto w-full">
         
         <div className="text-center mb-20">
           <h1 className="hero-element text-3xl font-extrabold text-gray-900 sm:text-4xl mb-4">
@@ -106,15 +106,15 @@ export default function AboutLayout() {
 
         <div className="space-y-16">
           
-          <div className="gsap-card bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100 relative overflow-hidden">
-            <div className="gsap-number absolute -top-6 -right-6 text-9xl font-black text-gray-50 opacity-50 pointer-events-none select-none">
+          <div className="gsap-card bg-white rounded-2xl shadow-sm p-6 sm:p-8 md:p-12 border border-gray-100 relative overflow-hidden">
+            <div className="gsap-number absolute -top-6 -right-6 text-8xl md:text-9xl font-black text-gray-50 opacity-50 pointer-events-none select-none">
               01
             </div>
 
             <div className="relative z-10 flex flex-col lg:flex-row gap-10 items-center">
-              <div className="lg:w-1/2">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Comprehensive Solutions</h2>
-                <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
+              <div className="lg:w-1/2 w-full">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Comprehensive Solutions</h2>
+                <div className="space-y-4 text-base md:text-lg text-gray-600 leading-relaxed">
                   <p>
                     With a strong commitment to safety, punctuality, affordability, and customer satisfaction, we have established ourselves as a reliable partner for families, industries, and commercial sectors across the country.
                   </p>
@@ -133,14 +133,14 @@ export default function AboutLayout() {
             </div>
           </div>
 
-          <div className="gsap-card bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100 relative overflow-hidden">
-            <div className="gsap-number absolute -top-6 -right-6 text-9xl font-black text-gray-50 opacity-50 pointer-events-none select-none">
+          <div className="gsap-card bg-white rounded-2xl shadow-sm p-6 sm:p-8 md:p-12 border border-gray-100 relative overflow-hidden">
+            <div className="gsap-number absolute -top-6 -right-6 text-8xl md:text-9xl font-black text-gray-50 opacity-50 pointer-events-none select-none">
               02
             </div>
 
-            <div className="relative z-10 mb-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Purpose</h2>
-              <p className="text-lg text-gray-600 leading-relaxed max-w-3xl">
+            <div className="relative z-10 mb-10 w-full">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Purpose</h2>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl">
                 We believe that customer trust is the foundation of our success, and every service is delivered with complete dedication and operational excellence.
               </p>
             </div>
@@ -155,13 +155,13 @@ export default function AboutLayout() {
                 />
               </div>
 
-              <div className="flex flex-col space-y-8">
+              <div className="flex flex-col space-y-8 w-full">
                 <div className="flex flex-col">
                   <h3 className="text-xl font-semibold text-blue-700 mb-3 flex items-center">
                     <CheckIcon />
                     Our Vision
                   </h3>
-                  <p className="text-gray-600 leading-relaxed pl-7">
+                  <p className="text-gray-600 leading-relaxed pl-7 text-sm md:text-base">
                     To become one of the most trusted and respected transportation and relocation companies in India. We aim to provide reliable, affordable, and professional logistics solutions to customers while continuously improving service quality and expanding our transportation network nationwide. We believe in creating long-term relationships through honesty and dedication.
                   </p>
                 </div>
@@ -171,7 +171,7 @@ export default function AboutLayout() {
                     <CheckIcon />
                     Our Mission
                   </h3>
-                  <p className="text-gray-600 leading-relaxed pl-7">
+                  <p className="text-gray-600 leading-relaxed pl-7 text-sm md:text-base">
                     To deliver safe, efficient, and timely transportation and relocation services with complete customer satisfaction. We are committed to ensuring safe packing, maintaining transparency in pricing, offering customized services, and utilizing modern logistics methods for every residential, commercial, and industrial project we undertake.
                   </p>
                 </div>
@@ -180,50 +180,50 @@ export default function AboutLayout() {
             </div>
           </div>
 
-          <div className="gsap-card bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100 relative overflow-hidden">
-            <div className="gsap-number absolute -top-6 -right-6 text-9xl font-black text-gray-50 opacity-50 pointer-events-none select-none">
+          <div className="gsap-card bg-white rounded-2xl shadow-sm p-6 sm:p-8 md:p-12 border border-gray-100 relative overflow-hidden">
+            <div className="gsap-number absolute -top-6 -right-6 text-8xl md:text-9xl font-black text-gray-50 opacity-50 pointer-events-none select-none">
               03
             </div>
 
-            <div className="relative z-10 mb-10 md:w-3/4">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+            <div className="relative z-10 mb-10 w-full lg:w-3/4">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 There are many reasons why customers trust Geetanjali Transport Service for their transportation and relocation solutions:
               </p>
             </div>
 
             <div className="reasons-grid grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10 mt-8 pt-8 border-t border-gray-100">
               {reasons.map((reason, index) => (
-                <div key={index} className="gsap-reason flex items-start">
+                <div key={index} className="gsap-reason flex items-start w-full">
                   <CheckIcon />
-                  <div>
+                  <div className="w-full">
                     <h3 className="text-lg font-semibold text-gray-900">{reason.title}</h3>
-                    <p className="text-gray-600 mt-1">{reason.desc}</p>
+                    <p className="text-gray-600 mt-1 text-sm md:text-base">{reason.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="gsap-card bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100 relative overflow-hidden">
-            <div className="gsap-number absolute -top-6 -right-6 text-9xl font-black text-gray-50 opacity-50 pointer-events-none select-none">
+          <div className="gsap-card bg-white rounded-2xl shadow-sm p-6 sm:p-8 md:p-12 border border-gray-100 relative overflow-hidden">
+            <div className="gsap-number absolute -top-6 -right-6 text-8xl md:text-9xl font-black text-gray-50 opacity-50 pointer-events-none select-none">
               04
             </div>
 
-            <div className="relative z-10 mb-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Quality, Safety & Professional Team</h2>
+            <div className="relative z-10 mb-10 w-full">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Quality, Safety & Professional Team</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10 border-t border-gray-100 pt-8">
-              <div>
+              <div className="w-full">
                 <h3 className="text-xl font-semibold text-blue-700 mb-3 flex items-center">
                   <CheckIcon />
                   Commitment to Quality & Safety
                 </h3>
-                <p className="text-gray-600 leading-relaxed pl-7 mb-4">
+                <p className="text-gray-600 leading-relaxed pl-7 mb-4 text-sm md:text-base">
                   We believe that quality service creates customer trust and long-term relationships. Safety is our ultimate priority. We follow strict safety guidelines to protect customer belongings, which include:
                 </p>
-                <ul className="list-disc text-gray-600 leading-relaxed pl-12 space-y-2 marker:text-blue-500">
+                <ul className="list-disc text-gray-600 leading-relaxed pl-12 space-y-2 marker:text-blue-500 text-sm md:text-base">
                   <li>Use of quality packing materials and professional handling methods</li>
                   <li>Secure loading/unloading by trained staff members</li>
                   <li>Safe transportation vehicles with careful route planning</li>
@@ -231,12 +231,12 @@ export default function AboutLayout() {
                 </ul>
               </div>
 
-              <div className="overflow-hidden rounded-xl">
+              <div className="overflow-hidden rounded-xl w-full">
                 <h3 className="text-xl font-semibold text-blue-700 mb-3 flex items-center">
                   <CheckIcon />
                   Professional Team & Customer Support
                 </h3>
-                <p className="text-gray-600 leading-relaxed pl-7 mb-6">
+                <p className="text-gray-600 leading-relaxed pl-7 mb-6 text-sm md:text-base">
                   Our success is supported by dedicated transport managers, drivers, packers, logistics coordinators, and warehouse staff. Our customer support team ensures quick responses for booking services, transportation inquiries, tracking updates, and relocation planning.
                 </p>
                 <img 
@@ -248,38 +248,38 @@ export default function AboutLayout() {
             </div>
           </div>
 
-          <div className="gsap-card bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100 relative overflow-hidden">
-            <div className="gsap-number absolute -top-6 -right-6 text-9xl font-black text-gray-50 opacity-50 pointer-events-none select-none">
+          <div className="gsap-card bg-white rounded-2xl shadow-sm p-6 sm:p-8 md:p-12 border border-gray-100 relative overflow-hidden">
+            <div className="gsap-number absolute -top-6 -right-6 text-8xl md:text-9xl font-black text-gray-50 opacity-50 pointer-events-none select-none">
               05
             </div>
 
-            <div className="relative z-10 mb-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Nationwide Network</h2>
+            <div className="relative z-10 mb-10 w-full">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Nationwide Network</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10 border-t border-gray-100 pt-8">
-              <div className="flex flex-col">
+              <div className="flex flex-col w-full">
                 <h3 className="text-xl font-semibold text-blue-700 mb-3 flex items-center">
                   <CheckIcon />
                   Major Service Locations
                 </h3>
-                <p className="text-gray-600 leading-relaxed pl-7">
+                <p className="text-gray-600 leading-relaxed pl-7 text-sm md:text-base">
                   We provide transportation and relocation services in various cities and states across India, including: Noida, Greater Noida, Delhi, Ghaziabad, Gurgaon, Faridabad, Meerut, Lucknow, Kanpur, Agra, Jaipur, Chandigarh, Mumbai, Pune, Hyderabad, Bengaluru, Chennai, Kolkata, Ahmedabad, and Surat. We continue to expand our network for better nationwide coverage.
                 </p>
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col w-full">
                 <h3 className="text-xl font-semibold text-blue-700 mb-3 flex items-center">
                   <CheckIcon />
                   The Importance of Our Services
                 </h3>
-                <p className="text-gray-600 leading-relaxed pl-7">
+                <p className="text-gray-600 leading-relaxed pl-7 text-sm md:text-base">
                   In today’s fast-moving world, professional packers and movers are essential. People frequently relocate due to jobs, business expansion, education, or lifestyle changes. Furthermore, efficient transportation is the backbone of business operations and supply chain management, ensuring timely delivery everywhere.
                 </p>
               </div>
             </div>
 
-            <div className="mt-10 relative z-10 overflow-hidden rounded-xl">
+            <div className="mt-10 relative z-10 overflow-hidden rounded-xl w-full">
               <img 
                 src="/about-4.jpg"
                 className="gsap-image object-cover w-full h-64 md:h-80 shadow-sm"
@@ -288,16 +288,16 @@ export default function AboutLayout() {
             </div>
           </div>
 
-          <div className="gsap-card bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100 relative overflow-hidden">
-            <div className="gsap-number absolute -top-6 -right-6 text-9xl font-black text-gray-50 opacity-50 pointer-events-none select-none">
+          <div className="gsap-card bg-white rounded-2xl shadow-sm p-6 sm:p-8 md:p-12 border border-gray-100 relative overflow-hidden">
+            <div className="gsap-number absolute -top-6 -right-6 text-8xl md:text-9xl font-black text-gray-50 opacity-50 pointer-events-none select-none">
               06
             </div>
 
-            <div className="relative z-10 mb-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Leadership</h2>
+            <div className="relative z-10 mb-10 w-full">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Leadership</h2>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-10 items-center relative z-10 border-t border-gray-100 pt-8">
+            <div className="flex flex-col md:flex-row gap-10 items-center relative z-10 border-t border-gray-100 pt-8 w-full">
               
               <div className="w-48 h-48 md:w-56 md:h-56 shrink-0 overflow-hidden rounded-2xl shadow-md border border-gray-200">
                 <img 
@@ -307,11 +307,11 @@ export default function AboutLayout() {
                 />
               </div>
               
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900">Rajesh Kumar</h3>
-                <p className="text-blue-600 font-semibold mb-4 text-lg">Founder & Proprietor</p>
+              <div className="w-full">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900">Rajesh Kumar</h3>
+                <p className="text-blue-600 font-semibold mb-4 text-base md:text-lg">Founder & Proprietor</p>
                 
-                <div className="space-y-4 text-gray-600 text-base leading-relaxed">
+                <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
                   <p>
                     Established in July 2017, Geetanjali Transport Service was founded by Mr. Rajesh Kumar as an officially registered proprietorship in Noida, Uttar Pradesh. Operating out of its commercial hub in Harola, Sector 5, the company has grown steadily into a trusted logistics partner across the entire Delhi NCR corridor and key nationwide routes.
                   </p>
@@ -328,10 +328,10 @@ export default function AboutLayout() {
 
         </div>
 
-        <div className="text-center mt-16 overflow-hidden">
+        <div className="text-center mt-16 overflow-hidden w-full">
           <Link 
             href="/services"
-            className="gsap-card inline-flex items-center justify-center bg-blue-600 px-8 py-4 text-white text-lg font-semibold hover:bg-blue-700 transition-colors rounded-lg shadow-sm"
+            className="gsap-card inline-flex items-center justify-center bg-blue-600 px-6 sm:px-8 py-3 sm:py-4 text-white text-base sm:text-lg font-semibold hover:bg-blue-700 transition-colors rounded-lg shadow-sm w-full sm:w-auto"
           >
             Explore Our Services
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

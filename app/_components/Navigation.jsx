@@ -11,12 +11,12 @@ import {
 
 export default function Navigation() {
   return (
-    <nav className="z-10 font-semibold">
-      <ul className="flex items-center gap-16">
+    <nav className="z-10 font-semibold w-full">
+      <ul className="flex items-center justify-start lg:justify-center gap-6 md:gap-8 lg:gap-10 w-max mx-auto lg:mx-0 px-2 lg:px-0 text-sm md:text-base">
         <li>
           <Link
             href="/"
-            className="flex items-center gap-2 transition-colors hover:text-blue-600"
+            className="flex items-center gap-2 transition-colors hover:text-blue-600 whitespace-nowrap"
           >
             <Home className="h-4 w-4" />
             <span>Home</span>
@@ -26,20 +26,19 @@ export default function Navigation() {
         <li>
           <Link
             href="/about"
-            className="flex items-center gap-2 transition-colors hover:text-blue-600"
+            className="flex items-center gap-2 transition-colors hover:text-blue-600 whitespace-nowrap"
           >
             <Info className="h-4 w-4" />
             <span>About Us</span>
           </Link>
         </li>
 
-        {/* Note: Make sure to add an icon inside ServicesDropdown internally if needed! */}
         <ServicesDropdown />
 
         <li>
           <Link
             href="/branches"
-            className="flex items-center gap-2 transition-colors hover:text-blue-600"
+            className="flex items-center gap-2 transition-colors hover:text-blue-600 whitespace-nowrap"
           >
             <MapPin className="h-4 w-4" />
             <span>Branches</span>
@@ -49,7 +48,7 @@ export default function Navigation() {
         <li>
           <Link
             href="/gallery"
-            className="flex items-center gap-2 transition-colors hover:text-blue-600"
+            className="flex items-center gap-2 transition-colors hover:text-blue-600 whitespace-nowrap"
           >
             <Image className="h-4 w-4" />
             <span>Gallery</span>
@@ -59,7 +58,7 @@ export default function Navigation() {
         <li>
           <Link
             href="/video"
-            className="flex items-center gap-2 transition-colors hover:text-blue-600"
+            className="flex items-center gap-2 transition-colors hover:text-blue-600 whitespace-nowrap"
           >
             <Video className="h-4 w-4" />
             <span>Videos</span>
@@ -69,7 +68,7 @@ export default function Navigation() {
         <li>
           <Link
             href="/contact"
-            className="flex items-center gap-2 transition-colors hover:text-blue-600"
+            className="flex items-center gap-2 transition-colors hover:text-blue-600 whitespace-nowrap"
           >
             <Mail className="h-4 w-4" />
             <span>Contact Us</span>
