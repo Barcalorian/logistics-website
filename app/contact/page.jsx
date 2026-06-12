@@ -1,4 +1,4 @@
-import AnimatedContactLayout from "../_components/ContactLayout";
+import ContactLayout from "../_components/ContactLayout";
 
 export const metadata = {
   title: "Contact Us - Geetanjali Transport Service",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function ContactUsPage() {
-  return <AnimatedContactLayout />;
+  return <ContactLayout />;
 }

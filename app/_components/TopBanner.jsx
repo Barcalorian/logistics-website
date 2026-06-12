@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function TopBanner() {
   return (
-    <div className="bg-gray-900 border-b border-gray-800 py-2 shadow-sm">
+    <div className="bg-gray-900 border-b border-gray-800 py-2 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 text-xs font-medium text-gray-300 overflow-x-auto no-scrollbar sm:overflow-x-visible">
         
         <div className="flex items-center gap-x-4 shrink-0 flex-nowrap">
