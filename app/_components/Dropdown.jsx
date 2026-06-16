@@ -33,7 +33,8 @@ export function ServicesDropdown() {
             textValue="Packers and Movers"
             className="rounded-lg hover:bg-blue-50 cursor-pointer transition-colors outline-none group"
           >
-            <Link href="/services#packers-movers" className="w-full flex items-center gap-3 px-4 py-2.5">
+            {/* Replaced # with / */}
+            <Link href="/services/packers-movers" className="w-full flex items-center gap-3 px-4 py-2.5">
               <Package className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors shrink-0" />
               <Label className="cursor-pointer font-medium text-gray-700 group-hover:text-blue-700 w-full">
                 Packers and Movers
@@ -46,9 +47,9 @@ export function ServicesDropdown() {
             textValue="Transportation"
             className="rounded-lg hover:bg-blue-50 cursor-pointer transition-colors outline-none group"
           >
-          <Link href="/services#transportation" className="w-full flex items-center gap-3 px-4 py-2.5">
+            {/* Replaced # with / */}
+          <Link href="/services/transportation" className="w-full flex items-center gap-3 px-4 py-2.5">
             <Truck className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors shrink-0" />
-
             <Label className="cursor-pointer font-medium text-gray-700 group-hover:text-blue-700 w-full">
               Transportation Services
             </Label>
@@ -60,7 +61,8 @@ export function ServicesDropdown() {
             textValue="Car and Bike Transport"
             className="rounded-lg hover:bg-blue-50 cursor-pointer transition-colors outline-none group"
           >
-            <Link href="/services#car-bike" className="w-full flex items-center gap-3 px-4 py-2.5">
+            {/* Replaced # with / */}
+            <Link href="/services/car-bike" className="w-full flex items-center gap-3 px-4 py-2.5">
               <Car className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors shrink-0" />
               <Label className="cursor-pointer font-medium text-gray-700 group-hover:text-blue-700 w-full">
                 Car & Bike Transport
@@ -73,7 +75,8 @@ export function ServicesDropdown() {
             textValue="Warehousing"
             className="rounded-lg hover:bg-blue-50 cursor-pointer transition-colors outline-none group"
           >
-            <Link href="/services#warehousing" className="w-full flex items-center gap-3 px-4 py-2.5">
+            {/* Replaced # with / */}
+            <Link href="/services/warehousing" className="w-full flex items-center gap-3 px-4 py-2.5">
               <Warehouse className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors shrink-0" />
               <Label className="cursor-pointer font-medium text-gray-700 group-hover:text-blue-700 w-full">
                 Warehousing & Storage
@@ -86,13 +89,29 @@ export function ServicesDropdown() {
             textValue="Loading and Unloading"
             className="rounded-lg hover:bg-blue-50 cursor-pointer transition-colors outline-none group"
           >
-            <Link href="/services#loading-unloading" className="w-full flex items-center gap-3 px-4 py-2.5">
+            {/* Replaced # with / */}
+            <Link href="/services/loading-unloading" className="w-full flex items-center gap-3 px-4 py-2.5">
               <ArrowUpDown className="h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors shrink-0" />
               <Label className="cursor-pointer font-medium text-gray-700 group-hover:text-blue-700 w-full">
                 Loading & Unloading
               </Label>
             </Link>
           </Dropdown.Item>
+          
+          {/* Optional: Add a "View All Services" link at the bottom of the dropdown */}
+          <div className="border-t border-gray-100 my-1"></div>
+          <Dropdown.Item 
+            key="view-all" 
+            textValue="View All Services"
+            className="rounded-lg hover:bg-blue-50 cursor-pointer transition-colors outline-none group"
+          >
+            <Link href="/services" className="w-full flex items-center px-4 py-2.5">
+              <Label className="cursor-pointer font-bold text-blue-600 group-hover:text-blue-700 w-full">
+                View All Services &rarr;
+              </Label>
+            </Link>
+          </Dropdown.Item>
+          
         </Dropdown.Menu>
       </Dropdown.Popover>
     </Dropdown>

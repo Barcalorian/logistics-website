@@ -215,8 +215,7 @@ export default function HomeLayout() {
   }, { scope: containerRef });
 
   return (
-    // STRICT BOUNDARIES ADDED HERE: w-full max-w-[100vw]
-    <div ref={containerRef} className="w-full max-w-[100vw] min-h-screen bg-gray-50 flex flex-col overflow-x-hidden">
+    <div ref={containerRef} className="w-full min-h-screen bg-gray-50 flex flex-col overflow-x-hidden relative">
 
       <EnquiryModal />
       
@@ -256,11 +255,10 @@ export default function HomeLayout() {
         </div>
       </div>
 
-      {/* Main wrapper set to strict w-full */}
-      <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <main className="flex-1 w-full min-w-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
         <div className="animate-overview-block opacity-0 will-change-transform mb-16 bg-white p-6 sm:p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center mb-8">
+          <h2 className="text-2xl font-extrabold text-gray-900 sm:text-4xl text-center mb-8">
             Company Overview
           </h2>
           <div className="space-y-6 text-base sm:text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
@@ -330,9 +328,9 @@ export default function HomeLayout() {
             Our Work & Strategic Reach
           </h2>
           
-          <div className="bento-grid-container grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[220px]">
+          <div className="bento-grid-container grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-auto md:auto-rows-[220px]">
             
-            <div className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden animate-bento-item opacity-0 group shadow-sm bg-gray-200">
+            <div className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden animate-bento-item opacity-0 group shadow-sm bg-gray-200 min-h-55">
               <Image 
                 src="/packing-loading.jpg" 
                 alt="Expert Packing and Loading Operations" 
@@ -347,7 +345,7 @@ export default function HomeLayout() {
               </div>
             </div>
 
-            <div className="md:col-span-1 md:row-span-1 bg-blue-600 text-white rounded-3xl p-6 flex flex-col justify-center animate-bento-item opacity-0 shadow-sm relative overflow-hidden">
+            <div className="md:col-span-1 md:row-span-1 bg-blue-600 text-white rounded-3xl p-6 flex flex-col justify-center animate-bento-item opacity-0 shadow-sm relative overflow-hidden min-h-55">
               <div className="relative z-10">
                 <h4 className="text-4xl sm:text-5xl font-black tracking-tight mb-2">{experienceYears}+ Yrs</h4>
                 <p className="text-blue-100 text-sm font-medium leading-snug">
@@ -357,7 +355,7 @@ export default function HomeLayout() {
               <div className="absolute -bottom-6 -right-6 text-[100px] opacity-10">⏳</div>
             </div>
 
-            <div className="md:col-span-1 md:row-span-1 bg-white border border-gray-100 rounded-3xl p-6 flex flex-col justify-center animate-bento-item opacity-0 shadow-sm">
+            <div className="md:col-span-1 md:row-span-1 bg-white border border-gray-100 rounded-3xl p-6 flex flex-col justify-center animate-bento-item opacity-0 shadow-sm min-h-55">
               <h4 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight mb-2">120+</h4>
               <p className="text-gray-500 text-sm font-medium leading-snug">
                 Major strategic hubs mapped seamlessly across our domestic Indian networks.
@@ -376,14 +374,14 @@ export default function HomeLayout() {
               <div className="absolute bottom-4 left-4 text-white font-bold">Modern Fleet Operations</div>
             </div>
 
-            <div className="md:col-span-1 md:row-span-1 bg-white border border-gray-100 rounded-3xl p-6 flex flex-col justify-center animate-bento-item opacity-0 shadow-sm">
+            <div className="md:col-span-1 md:row-span-1 bg-white border border-gray-100 rounded-3xl p-6 flex flex-col justify-center animate-bento-item opacity-0 shadow-sm min-h-55">
               <h4 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight mb-2">8.5k+</h4>
               <p className="text-gray-500 text-sm font-medium leading-snug">
                 Flawless relocations executed for families, commercial centers, and businesses.
               </p>
             </div>
 
-            <div className="md:col-span-2 md:row-span-1 bg-gray-900 text-white rounded-3xl p-6 md:p-8 flex flex-col justify-center animate-bento-item opacity-0 shadow-sm relative overflow-hidden">
+            <div className="md:col-span-2 md:row-span-1 bg-gray-900 text-white rounded-3xl p-6 md:p-8 flex flex-col justify-center animate-bento-item opacity-0 shadow-sm relative overflow-hidden min-h-55">
               <div className="relative z-10 flex items-center gap-4 sm:gap-6">
                 <div className="shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-white/10 rounded-full flex items-center justify-center text-2xl sm:text-3xl">
                   🎧
@@ -452,7 +450,8 @@ export default function HomeLayout() {
                     {service.desc}
                   </p>
                   
-                  <Link href={`/services#${service.id}`} className="mt-auto">
+                  {/* REPLACED '#' WITH '/' FOR DYNAMIC ROUTING */}
+                  <Link href={`/services/${service.id}`} className="mt-auto">
                     <button className="w-full flex items-center justify-center gap-2 bg-gray-50 text-blue-700 hover:bg-blue-600 hover:text-white border border-gray-100 hover:border-blue-600 font-semibold py-3 sm:py-3.5 rounded-xl transition-all duration-300">
                       View Details
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -466,7 +465,7 @@ export default function HomeLayout() {
           </div>
         </div>
 
-        <div className="animate-rates-section opacity-0 will-change-transform mb-20 bg-white p-6 sm:p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 w-full">
+        <div className="animate-rates-section opacity-0 will-change-transform mb-20 bg-white p-6 sm:p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 w-full relative">
           <div className="text-center mb-8 sm:mb-10">
              <span className="text-blue-600 font-bold uppercase tracking-widest text-xs sm:text-sm mb-2 block">
               Transparent Pricing
@@ -480,7 +479,6 @@ export default function HomeLayout() {
             </p>
           </div>
 
-          {/* Table container properly clamped to prevent horizontal push */}
           <div className="w-full max-w-full overflow-x-auto pb-4">
             <table className="w-full text-left border-collapse min-w-200">
               <thead>
@@ -543,7 +541,6 @@ export default function HomeLayout() {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full">
               <div className="animate-cert-item opacity-0 will-change-transform flex flex-col bg-white p-4 rounded-lg border border-gray-200 shadow-sm w-full">
                 <span className="text-xs text-blue-600 uppercase tracking-widest font-bold mb-1">MSME Udyam</span>
-                {/* Break-all ensures long codes wrap safely on tiny screens */}
                 <span className="text-base sm:text-lg font-bold text-gray-900 break-all">UDYAM-UP-28-0033633</span>
               </div>
               <div className="animate-cert-item opacity-0 will-change-transform flex flex-col bg-white p-4 rounded-lg border border-gray-200 shadow-sm w-full">
@@ -677,7 +674,7 @@ export default function HomeLayout() {
               <div className="flex flex-col gap-4 text-gray-200 font-medium mb-6 w-full">
                 <div className="flex items-start w-full">
                   <svg className="w-5 h-5 mr-3 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                   </svg>
                   <div className="flex flex-col text-white font-semibold">
                     <a href="tel:+919716009462" className="hover:text-blue-400 transition-colors leading-tight text-sm sm:text-base">
@@ -693,7 +690,6 @@ export default function HomeLayout() {
                   <svg className="w-5 h-5 mr-3 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                   </svg>
-                  {/* Break-all is crucial here to prevent long emails breaking the screen on phones */}
                   <a href="mailto:Info@geetanjalitransportservice.in" className="text-white font-semibold hover:text-blue-400 transition-colors break-all leading-tight text-sm sm:text-base">
                     Info@geetanjalitransportservice.in
                   </a>

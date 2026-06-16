@@ -1,8 +1,8 @@
 import siteData from "../_lib/data/siteData.json"
-import ServicesLayout from "../_components/ServicesLayout";
+import ServicesListLayout from "../_components/ServicesListLayout";
 
 export default function ServicesPage() {
   return (
-    <ServicesLayout siteData={siteData} />
+    <ServicesListLayout siteData={siteData} />
   );
 }

@@ -1,4 +1,5 @@
 "use client"
+
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
@@ -166,28 +167,29 @@ export default function Footer() {
                 Our Services
               </h4>
               <ul className="space-y-4">
+                {/* REPLACED ALL '#' WITH '/' FOR DYNAMIC ROUTING */}
                 <li>
-                  <Link href="/services#packers-movers" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
+                  <Link href="/services/packers-movers" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
                     Packers and Movers
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services#transportation" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
+                  <Link href="/services/transportation" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
                     Transportation Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services#car-bike" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
+                  <Link href="/services/car-bike" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
                     Car & Bike Transport
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services#warehousing" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
+                  <Link href="/services/warehousing" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
                     Warehousing & Storage
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services#loading-unloading" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
+                  <Link href="/services/loading-unloading" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
                     Loading & Unloading
                   </Link>
                 </li>
@@ -229,30 +231,30 @@ export default function Footer() {
             <ul className="space-y-5 text-sm w-full">
               <li className="flex items-start w-full">
                 <LocationIcon />
-                <span className="text-gray-600 leading-relaxed wrap-break-words">
+                <span className="text-gray-600 leading-relaxed break-words">
                   Plot No. 512B, Shop No. 3, Ground Floor, Adarsh Market, Nearby Fire Station Harola, Sector 5, Noida, UP 201301
                 </span>
               </li>
               <li className="flex items-start w-full">
                 <PhoneIcon />
-                <span className="text-gray-600 leading-relaxed wrap-break-words">
+                <span className="text-gray-600 leading-relaxed break-words">
                   +91 9716009462 <br/> +91 7838516655
                 </span>
               </li>
               <li className="flex items-start w-full">
                 <EmailIcon />
                 <div className="flex flex-col space-y-2 w-full">
-                  <a href="mailto:info@geetanjalitransportservice.in" className="text-gray-600 hover:text-blue-600 transition-colors wrap-break-words">
+                  <a href="mailto:info@geetanjalitransportservice.in" className="text-gray-600 hover:text-blue-600 transition-colors break-words">
                     Info@geetanjalitransportservice.in
                   </a>
-                  <a href="mailto:geetanjalitransportservices@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors wrap-break-words">
+                  <a href="mailto:geetanjalitransportservices@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors break-words">
                     Geetanjalitransportservices@gmail.com
                   </a>
                 </div>
               </li>
               <li className="flex items-start w-full">
                 <GlobeIcon />
-                <a href="https://www.geetanjalitransportservice.in" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors wrap-break-words">
+                <a href="https://www.geetanjalitransportservice.in" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors break-words">
                   www.geetanjalitransportservice.in
                 </a>
               </li>
@@ -271,7 +273,7 @@ export default function Footer() {
             Design & Developed by <a href="https://webworldhub.in" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 hover:underline font-medium transition-colors">webworldhub.in</a>
           </div>
 
-          <div className="flex flex-row justify-center lg:justify-end gap-3 md:gap-4 text-center lg:text-right whitespace-nowrap overflow-x-auto scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden w-full lg:w-auto">
+          <div className="flex flex-row justify-center lg:justify-end gap-3 md:gap-4 text-center lg:text-right whitespace-nowrap overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden w-full lg:w-auto">
             <Link href="/work-process" className="hover:text-blue-600 transition-colors font-medium">
               Work Process
             </Link>
