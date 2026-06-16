@@ -100,7 +100,7 @@ export default function EnquiryModal() {
   return (
     <div 
       ref={modalRef} 
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
+      className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6"
     >
       <div 
         className="modal-backdrop absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 will-change-transform"
@@ -111,7 +111,7 @@ export default function EnquiryModal() {
         - Reduced max-h to 85vh on mobile so it doesn't get hidden under browser UI.
         - Reduced border radius slightly on mobile (rounded-2xl) to save edge space.
       */}
-      <div className="modal-box relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto opacity-0 will-change-transform z-10 [scrollbar-width:thin] [-ms-overflow-style:none] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
+      <div className="modal-box relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto opacity-0 will-change-transform z-10 scrollbar-thin [-ms-overflow-style:none] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full">
         
         <button
           onClick={closeModalAnimation}
