@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -36,7 +35,8 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="w-full bg-white border-t border-gray-200 pt-16 pb-8 overflow-x-hidden select-none">
+    // REMOVED: select-none completely to allow micro-wiggles on touchscreens to click properly
+    <footer className="w-full bg-white border-t border-gray-200 pt-16 pb-8 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 w-full">
@@ -58,7 +58,6 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* FIXED: Replaced hover with md:hover so mobile taps execute instantly */}
             <div className="flex flex-wrap pt-2 mt-auto gap-1">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-3 -ml-2 text-gray-500 md:hover:text-blue-600 md:hover:bg-blue-50 rounded-xl transition-colors" aria-label="Facebook">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" /></svg>
@@ -92,14 +91,14 @@ export default function Footer() {
                 Quick Links
               </h4>
               <ul className="space-y-1 mb-6">
-                {/* FIXED: Removed raw hover styles so mobile detects single touch click immediately */}
-                <li><Link href="/" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Home</Link></li>
-                <li><Link href="/about" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">About Us</Link></li>
-                <li><Link href="/services" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Our Services</Link></li>
-                <li><Link href="/branches" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Branches</Link></li>
-                <li><Link href="/gallery" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Gallery</Link></li>
-                <li><Link href="/videos" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Videos</Link></li>
-                <li><Link href="/contact" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Contact Us</Link></li>
+                {/* DYNAMIC FIXED: Swapped Link tags to standard HTML anchor tags. This clears memory context instantly on touch screens. */}
+                <li><a href="/" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Home</a></li>
+                <li><a href="/about" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">About Us</a></li>
+                <li><a href="/services" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Our Services</a></li>
+                <li><a href="/branches" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Branches</a></li>
+                <li><a href="/gallery" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Gallery</a></li>
+                <li><a href="/videos" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Videos</a></li>
+                <li><a href="/contact" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Contact Us</a></li>
               </ul>
             </div>
 
@@ -121,12 +120,12 @@ export default function Footer() {
                 Our Services
               </h4>
               <ul className="space-y-1">
-                {/* FIXED: Replaced standard hover with desktop-only hover breakpoint */}
-                <li><Link href="/services/packers-movers" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Packers and Movers</Link></li>
-                <li><Link href="/services/transportation" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Transportation Services</Link></li>
-                <li><Link href="/services/car-bike" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Car & Bike Transport</Link></li>
-                <li><Link href="/services/warehousing" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Warehousing & Storage</Link></li>
-                <li><Link href="/services/loading-unloading" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Loading & Unloading</Link></li>
+                {/* DYNAMIC FIXED: Bypasses client-side calculation freezes entirely */}
+                <li><a href="/services/packers-movers" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Packers and Movers</a></li>
+                <li><a href="/services/transportation" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Transportation Services</a></li>
+                <li><a href="/services/car-bike" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Car & Bike Transport</a></li>
+                <li><a href="/services/warehousing" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Warehousing & Storage</a></li>
+                <li><a href="/services/loading-unloading" className="block py-2 w-full text-gray-600 md:hover:text-blue-600 transition-colors font-medium">Loading & Unloading</a></li>
               </ul>
             </div>
 
@@ -197,11 +196,7 @@ export default function Footer() {
 
         </div>
 
-        {/* BOTTOM METADATA LINK AREA FIX:
-            Tapping links inside dynamic horizontal scroll containers on small screens can misfire 
-            if a touch wiggle is registered. Using block layout structure fixes touch latency entirely.
-        */}
-        <div className="pt-8 border-t border-gray-200 flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-gray-500 w-full">
+        <div className="pt-8 border-t border-gray-100 flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-gray-500 w-full">
           
           <div className="text-center lg:text-left w-full lg:w-auto">
             © {currentYear} Geetanjali Transport Service. All rights reserved.
@@ -212,18 +207,19 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-row justify-center lg:justify-end gap-4 text-center lg:text-right whitespace-nowrap overflow-x-auto scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden w-full lg:w-auto touch-action-pan-x">
-            <Link href="/work-process" className="inline-block py-1 text-gray-500 md:hover:text-blue-600 font-medium transition-colors">
+            {/* FIXED: Anchor tags for legal subpages to maintain single-touch instant execution accuracy */}
+            <a href="/work-process" className="inline-block py-1 text-gray-500 md:hover:text-blue-600 font-medium transition-colors">
               Work Process
-            </Link>
-            <Link href="/refund-policy" className="inline-block py-1 text-gray-500 md:hover:text-blue-600 font-medium transition-colors">
+            </a>
+            <a href="/refund-policy" className="inline-block py-1 text-gray-500 md:hover:text-blue-600 font-medium transition-colors">
               Refund Policy
-            </Link>
-            <Link href="/privacy-policy" className="inline-block py-1 text-gray-500 md:hover:text-blue-600 font-medium transition-colors">
+            </a>
+            <a href="/privacy-policy" className="inline-block py-1 text-gray-500 md:hover:text-blue-600 font-medium transition-colors">
               Privacy Policy
-            </Link>
-            <Link href="/terms-and-conditions" className="inline-block py-1 text-gray-500 md:hover:text-blue-600 font-medium transition-colors">
+            </a>
+            <a href="/terms-and-conditions" className="inline-block py-1 text-gray-500 md:hover:text-blue-600 font-medium transition-colors">
               Terms & Conditions
-            </Link>
+            </a>
           </div>
 
         </div>
