@@ -26,7 +26,7 @@
       "id": "car-bike",
       "title": "Car & Bike Transport",
       "desc": "Secure vehicle transportation services across India using professional carriers and handling methods.",
-      "image": "/vehicle-transport.jpg"
+      "image": "/vehicle-transport.png"
     },
     {
       "id": "warehousing",
@@ -38,7 +38,7 @@
       "id": "loading-unloading",
       "title": "Loading & Unloading",
       "desc": "Trained staff for the safe loading and unloading of goods using proper equipment and techniques.",
-      "image": "/loading-unloading.jpeg"
+      "image": "/loading-unloading.jpg"
     }
   ],
   "ratesData": [
