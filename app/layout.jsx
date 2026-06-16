@@ -3,6 +3,7 @@ import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
+import FloatingChat from "./_components/FloatingChat"
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           </StoreProvider>
         </div>
         <Footer />
+        <FloatingChat />
       </body>
     </html>
   );
