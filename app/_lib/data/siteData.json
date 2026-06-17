@@ -199,5 +199,84 @@
       "intro": "Loading and unloading are important parts of transportation and relocation. We provide trained staff for the safe loading and unloading of goods using proper equipment and handling techniques.",
       "subCategories": []
     }
+  ],
+  "locations": [
+    { 
+      "id": "uttar-pradesh", 
+      "state": "Uttar Pradesh", 
+      "image": "/branches/uttar-pradesh.jpg",
+      "cities": ["Noida", "Greater Noida", "Ghaziabad", "Meerut", "Lucknow", "Kanpur", "Agra"], 
+      "desc": "Our core logistical hub handling extensive distribution grids, domestic shifting matrices, and local transit setups." 
+    },
+    { 
+      "id": "delhi-ncr", 
+      "state": "Delhi NCR", 
+      "image": "/branches/delhi-ncr.jpg",
+      "cities": ["Delhi"], 
+      "desc": "Capital logistics management delivering high-speed commercial distribution and premium household relocations." 
+    },
+    { 
+      "id": "haryana", 
+      "state": "Haryana", 
+      "image": "/branches/haryana.jpg",
+      "cities": ["Gurgaon", "Faridabad"], 
+      "desc": "Strategic industrial and corporate shifting workflows tailored for enterprise networks and high-density residential hubs." 
+    },
+    { 
+      "id": "rajasthan", 
+      "state": "Rajasthan", 
+      "image": "/branches/rajasthan.jpg",
+      "cities": ["Jaipur"], 
+      "desc": "Long-distance multi-modal transport lines keeping commercial and residential freight safe across heritage corridors." 
+    },
+    { 
+      "id": "chandigarh", 
+      "state": "Chandigarh UT", 
+      "image": "/branches/chandigarh.jpg",
+      "cities": ["Chandigarh"], 
+      "desc": "Organized, prompt moving profiles serving structured urban domains with damage-free logistics safety metrics." 
+    },
+    { 
+      "id": "maharashtra", 
+      "state": "Maharashtra", 
+      "image": "/branches/maharashtra.jpg",
+      "cities": ["Mumbai", "Pune"], 
+      "desc": "Connecting cross-country economic pipelines with deep local distribution networks and safe containerized transit structures." 
+    },
+    { 
+      "id": "gujarat", 
+      "state": "Gujarat", 
+      "image": "/branches/gujarat.jpg",
+      "cities": ["Ahmedabad", "Surat"], 
+      "desc": "Commercial freight setups, manufacturing logistical support, and dedicated residential relocations." 
+    },
+    { 
+      "id": "telangana", 
+      "state": "Telangana", 
+      "image": "/branches/telangana.jpg",
+      "cities": ["Hyderabad"], 
+      "desc": "Tech-hub specialized cargo operations managing secure IT workspace transitions and secure domestic logistics." 
+    },
+    { 
+      "id": "karnataka", 
+      "state": "Karnataka", 
+      "image": "/branches/karnataka.jpg",
+      "cities": ["Bengaluru"], 
+      "desc": "Premium workspace asset shifting arrays and rapid household moving routes mapped across southern corridors." 
+    },
+    { 
+      "id": "tamil-nadu", 
+      "state": "Tamil Nadu", 
+      "image": "/branches/tamil-nadu.jpg",
+      "cities": ["Chennai"], 
+      "desc": "Industrial manufacturing supply chain integrations alongside careful home relocation and car tracking frameworks." 
+    },
+    { 
+      "id": "west-bengal", 
+      "state": "West Bengal", 
+      "image": "/branches/west-bengal.jpg",
+      "cities": ["Kolkata"], 
+      "desc": "Eastern terminal freight dispatch architectures and expert port-region household moving support setups." 
+    }
   ]
 }
